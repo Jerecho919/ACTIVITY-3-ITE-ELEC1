@@ -4,6 +4,38 @@
     <meta charset="UTF-8">
     <title>MOVIE GALLERY</title>
     <style>
+
+
+.marquee-wrapper {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .rgb-marquee {
+      display: inline-block;
+      font-size: 60px;
+      font-weight: bold;
+      background: linear-gradient(270deg, red, orange, yellow, green, cyan, blue, violet, red);
+      background-size: 1000% 100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: moveText 10s linear infinite, rgbFlow 8s linear infinite;
+    }
+
+    @keyframes moveText {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    @keyframes rgbFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+
+
         
           body {
       background-image: url('bgmain.jpg'); 
@@ -66,9 +98,11 @@
 </head>
 <body>
  
-    <marquee direction="right" scrollamount="6">
-    <h1>Movie Film Gallery</h1>
-  </marquee>
+ <div class="marquee-wrapper">
+  <span class="rgb-marquee">Movie Film Gallery</span>
+</div>
+
+
 
     <div class="movie-container">
 
