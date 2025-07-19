@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <title>MOVIE GALLERY</title>
     <style>
-
-
-.marquee-wrapper {
+ .marquee-wrapper {
       width: 100%;
       overflow: hidden;
       white-space: nowrap;
@@ -20,12 +18,17 @@
       background-size: 1000% 100%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      animation: moveText 10s linear infinite, rgbFlow 8s linear infinite;
+      animation: scroll-left 10s linear infinite, rgbFlow 8s linear infinite;
+      padding-left: 100%; /* Start off-screen */
     }
 
-    @keyframes moveText {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
     }
 
     @keyframes rgbFlow {
@@ -97,11 +100,9 @@
     </style>
 </head>
 <body>
- 
  <div class="marquee-wrapper">
-  <span class="rgb-marquee">Movie Film Gallery</span>
-</div>
-
+    <span class="rgb-marquee">Movie Film Gallery&nbsp;&nbsp;&nbsp;Movie Film Gallery&nbsp;&nbsp;&nbsp;Movie Film Gallery</span>
+  </div>
 
 
     <div class="movie-container">
